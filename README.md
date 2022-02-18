@@ -1,9 +1,9 @@
 # Sugar & Flour 
 
-### deployed back-end
+### deployed back-end link : https://sugar-and-flour.herokuapp.com/
 
 
-### deployed front-end
+### deployed front-end link : 
 
 
 
