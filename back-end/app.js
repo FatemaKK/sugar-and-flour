@@ -1,7 +1,7 @@
 // DEPENDENCIES
 const cors = require("cors");
 const express = require("express");
-const PORT = process.env.PORT; 
+
 
 // CONFIGURATION
 const app = express();
