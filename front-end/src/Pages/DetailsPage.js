@@ -1,12 +1,11 @@
-import Item from "../Components/Item";
+import Details from "../Components/Details";
 
 function DetailsPage() {
-    return (
-        <div>
-             <h1>Details of an Item</h1>
-            <Item />
-        </div>
-    )
+  return (
+    <div>
+      <Details />
+    </div>
+  );
 }
 
 export default DetailsPage;

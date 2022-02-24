@@ -15,21 +15,9 @@ function Items() {
 
   return (
     <div>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Image</th>
-          </tr>
-        </thead>
-        <tbody>
-          {items.map((item) => {
-            return <Item key={item.id} item={item} />;
-          })}
-        </tbody>
-      </table>
+      {items.map((item) => {
+        return <Item key={item.id} item={item} />;
+      })}
     </div>
   );
 }

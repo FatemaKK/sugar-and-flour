@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import React from "react";
 
@@ -12,7 +12,6 @@ import NewPage from "./Pages/NewPage";
 function App() {
   return (
     <div>
-      <h1>Hello Sugar!</h1>
       <BrowserRouter>
         <NavBar />
         <section>

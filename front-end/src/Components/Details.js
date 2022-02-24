@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
-l;
 
 function Details() {
   const navigate = useNavigate();
@@ -25,12 +24,31 @@ function Details() {
       .catch((error) => console.warn(error));
   };
 
+  let priceFormatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
+
   return (
     <div>
-      <h4>'{item.name}' &nbsp; {item.featuredBestseller ? "YES" : "NO"}</h4>
-      <p>{item.description}</p>
-      <p>{item.price}</p>
-      <p><img src={item.image} /></p>
+      <h4>
+        '{item.name}'{" "}
+        {item.featured_bestseller ? "is a featured bestseller!" : null}
+      </h4>
+      <p>Description: {item.description}</p>
+      <p>Price: {priceFormatter.format(item.price)}</p>
+      <p>
+        <img src={item.image} />
+      </p>
+      <div>
+        <Link to={"/bakedItems"}>
+          <button>Back</button>
+        </Link>
+        <Link to={`/bakedItems/${item.id}/edit`}>
+          <button>Edit</button>
+        </Link>
+        <button onClick={handleDelete}>Delete</button>
+      </div>
     </div>
   );
 }
