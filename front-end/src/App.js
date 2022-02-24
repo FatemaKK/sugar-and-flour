@@ -1,29 +1,29 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
-const API = process.env.REACT_APP_API_URL;
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-console.log(API);
+import React from "react";
+
+import NavBar from "./Components/NavBar";
+import Home from "./Pages/Home";
+import IndexPage from "./Pages/IndexPage";
+import DetailsPage from "./Pages/DetailsPage";
+import EditPage from "./Pages/EditPage";
+import NewPage from "./Pages/NewPage";
+
 function App() {
-  const [days, setDays] = useState([]);
-  useEffect(() => {
-    axios
-      .get(`${API}/test`)
-      .then(
-        (response) => {
-          setDays(response.data);
-        },
-        (error) => console.log("get", error)
-      )
-      .catch((c) => console.warn("catch", c));
-  }, []);
   return (
     <div>
-      <h1>Hello World!</h1>
-      <ul>
-        {days.map((day) => (
-          <li key={day.name}>{day.name}</li>
-        ))}
-      </ul>
+      <BrowserRouter>
+        <NavBar />
+        <section>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/bakedItems" element={<IndexPage />} />
+            <Route exact path="/bakedItems/:id" element={<DetailsPage />} />
+            <Route exact path="/bakedItems/:id/edit" element={<EditPage />} />
+            <Route exact path="/bakedItems/new" element={<NewPage />} />
+          </Routes>
+        </section>
+      </BrowserRouter>
     </div>
   );
 }
