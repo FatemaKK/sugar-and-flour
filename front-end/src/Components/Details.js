@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 function Details() {
   const navigate = useNavigate();
@@ -42,12 +43,12 @@ function Details() {
       </p>
       <div>
         <Link to={"/bakedItems"}>
-          <button>Back</button>
+          <Button variant="outline-secondary">Back</Button>
         </Link>
         <Link to={`/bakedItems/${item.id}/edit`}>
-          <button>Edit</button>
+          <Button variant="outline-secondary">Edit</Button>
         </Link>
-        <button onClick={handleDelete}>Delete</button>
+        <Button variant="outline-secondary" onClick={handleDelete}>Delete</Button>
       </div>
     </div>
   );

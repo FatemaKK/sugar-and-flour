@@ -17,7 +17,7 @@ function App() {
         <section>
           <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route exact path="/bakedItems" element={<IndexPage />} />
+            <Route exact path="/bakedItems" element={<IndexPage />} /> 
             <Route exact path="/bakedItems/:id" element={<DetailsPage />} />
             <Route exact path="/bakedItems/:id/edit" element={<EditPage />} />
             <Route exact path="/bakedItems/new" element={<NewPage />} />
