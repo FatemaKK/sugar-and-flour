@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
 
 function New() {
   const navigate = useNavigate();
@@ -92,14 +91,12 @@ function New() {
         />
         <br />
         <br />
-        <Button variant="outline-secondary" handleSubmit={handleSubmit}>
-          Submit
-        </Button>
-        <br />
-        <Link to={"/bakedItems"}>
-          <Button variant="outline-secondary">Back</Button>
-        </Link>
+        <button handleSubmit={handleSubmit}>Submit</button>
       </form>
+      <br />
+      <Link to={"/bakedItems"}>
+        <button>Back</button>
+      </Link>
     </div>
   );
 }
